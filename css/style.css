@@ -7,6 +7,7 @@ body {
   font-family: "KoPubDotumMedium", sans-serif;
   background-color: black;
   color: white;
+  scroll-behavior: smooth;
 }
 .page_container {
   display: flex;
@@ -81,21 +82,51 @@ body {
   line-height: 5rem;
 }
 .main-title > h3 {
-  font-size: 1.75rem;
-  letter-spacing: 0.015em;
+  font-family: "KoPubDotumMedium";
+  font-size: 1.7rem;
+  letter-spacing: 0.025em;
   line-height: 4rem;
 }
 .social > li > a {
   display: block;
   margin: 2em;
 }
-
+/* 스크롤 버튼 */
 .btn-scroll {
   position: absolute;
   left: 50%;
+  transform: translateX(-50%);
   bottom: 1em;
   border: none;
   background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.6;
+}
+.btn-scroll > .mouse {
+  position: relative;
+  border: 2px solid white;
+  width: 1.875em;
+  height: 3.125em;
+  border-radius: 0.938em;
+  cursor: pointer;
+}
+.btn-scroll > .mouse > .wheel {
+  position: absolute;
+  width: 3px;
+  height: 35%;
+  background-color: var(--yellow);
+  border-radius: 20%;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+}
+.btn-scroll > span {
+  font-family: "GeographThin";
+  line-height: 1.2;
+  font-size: 1.5rem;
+  color: white;
 }
 
 /* main */
