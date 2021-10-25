@@ -5,86 +5,136 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>내셔널지오그래픽_리뉴얼</title>
 </head>
 <body>
     <div class="page_container">
         <header id="header">
             <nav id="nav">
-                <a href="#" class="nav__logo"></a>
-                <ul class="menu">
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">BRAND</a></li>
-                    <li><a href="#">SHOWS</a></li>
-                    <li><a href="#">YOUTUBE</a></li>
-                    <li><a href="#">NEWS</a></li>
-                    <li><a href="#">MAGAZINE</a></li>
-                    <li><a href="#">STORE</a></li>
-                </ul>
+                    <a href="#" class="nav__logo">
+                        <img src="img/logo.png" alt="">
+                    </a>
+                    <ul class="menu">
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">BRAND</a></li>
+                        <li><a href="#">SHOWS</a></li>
+                        <li><a href="#">YOUTUBE</a></li>
+                        <li><a href="#">NEWS</a></li>
+                        <li><a href="#">MAGAZINE</a></li>
+                        <li><a href="#">STORE</a></li>
+                    </ul>
             </nav>
+            <video class="header__video" src="video/intro.m4v" muted loop autoplay></video>
+            <div class="overlay">
+                <hgroup class="main-title">
+                    <h2>ONE STEP TO THE EDGE<br>OF IMPOSSIBLE<br>AND THEN, FURTHER</h2>
+                    <h3>지구와 인류 그리고 "우리"를 둘러싼 살아있는 이야기</h3>
+                </hgroup>
+                <ul class="social">
+                    <li><a href="#"><img src="img/icon_yt.png" alt="유튜브 바로가기"></a></li>
+                    <li><a href="#"><img src="img/icon_fb.png" alt="페이스북 바로가기"></a></li>
+                    <li><a href="#"><img src="img/icon_insta.png" alt="인스타그램 바로가기"></a></li>
+                </ul>
+            </div>
+            <button class="btn-scroll"></button>
+
         </header>
         <main>
             <!-- 뉴스 -->
             <section id="news" class="content-container">
-                <a href="#"><h2 class="container-title">NEWS</h2></a>
-                <article class="news__article">
-                    <a href="#" class="news-link">
-                        <img class="news__thumbnail" src="img/news_thumb_01.png" alt="맨몸으로_절벽을_오르는_등반가_알렉스_호놀드의_프리솔로_썸네일">
-                        <figcaption class="news__article_headline">
-                            맨몸으로 절벽을 오르는 등반가, 알렉스 호놀드의 &lt;프리솔로&gt;
-                        </figcaption>
-                    </a>
-                </article>
-                <article class="news__article">
-                    <a href="#" class="post-link">
-                        <img class="news__thumbnail" src="img/news_thumb_02.png" alt="인류의_새로운_시작_그_두번째_이야기_썸네일">
-                        <h5 class="news__article_headline">
-                            인류의 새로운 시작, 그 두번째 이야기
-                        </h5>
-                    </a>
-                </article>
-                <article class="news__article">
-                    <a href="#" class="post-link">
-                        <img class="news__thumbnail" src="img/news_thumb_03.png" alt="일회용_플라스틱_사용_줄이기_캠페인_썸네일">
-                        <h5 class="news__article_headline">
-                            일회용 플라스틱 사용 줄이기 캠페인!
-                        </h5>
-                    </a>
-                </article>
+                <a href="#" class="container-title"><h2>NEWS</h2></a>
+                <div class="news__wrap">
 
-                <button class="btn_more">see more</button>
+                    <article class="news__article">
+                        <a href="#" class="news-link">
+                            <img class="news__thumbnail" src="img/news_thumb_01.png" alt="맨몸으로_절벽을_오르는_등반가_알렉스_호놀드의_프리솔로_썸네일">
+                            <h5 class="news__article_headline">
+                                맨몸으로 절벽을 오르는 등반가,<br>알렉스 호놀드의 &lt;프리솔로&gt;
+                            </h5>
+                        </a>
+                    </article>
+                    <article class="news__article">
+                        <a href="#" class="post-link">
+                            <img class="news__thumbnail" src="img/news_thumb_02.png" alt="인류의_새로운_시작_그_두번째_이야기_썸네일">
+                            <h5 class="news__article_headline">
+                                인류의 새로운 시작, 그 두번째 이야기
+                            </h5>
+                        </a>
+                    </article>
+                    <article class="news__article">
+                        <a href="#" class="post-link">
+                            <img class="news__thumbnail" src="img/news_thumb_03.png" alt="일회용_플라스틱_사용_줄이기_캠페인_썸네일">
+                            <h5 class="news__article_headline">
+                                일회용 플라스틱 사용 줄이기 캠페인!
+                            </h5>
+                        </a>
+                    </article>
+                </div>
+                <!-- news wrap -->
+
+                <button class="btn_more">
+                    <span class="material-icons">
+                        add
+                        </span>
+                        <span class="text">
+                            SEE MORE
+                        </span>
+                    </button>
             </section>
             <!-- 매거진 -->
             <section id="magazine" class="content-container">
-                <a href="#"><h2 class="container-title">MAGAZINES</h2></a>
-                <article class="magazine__article">
-                    <a href="#" class="post-link">
-                        <img class="magazine__thumbnail" src="img/magazine_thumb_01.png" alt="내셔널지오그래픽_매거진_썸네일">
-                        <h5 class="magazine__article_headline">
-                            내셔널지오그래픽 매거진
-                        </h5>
-                        <span class="magazine__article_info">
-                            9월호, 경이로운 작은 물체
+                <a href="#" class="container-title"><h2>MAGAZINES</h2></a>
+                <div class="magazine__wrap">
+                    <article class="magazine__article">
+                        <a href="#" class="post-link">
+                            <img class="magazine__thumbnail" src="img/magazine_thumb_01.png" alt="내셔널지오그래픽_매거진_썸네일">
+                            <h5 class="magazine__article_headline">
+                                내셔널지오그래픽 매거진
+                            </h5>
+                            <span class="magazine__article_subtitle">
+                                9월호, 경이로운 작은 물체
+                            </span>
+                        </a>
+                    </article>
+                    <article class="magazine__article">
+                        <a href="#" class="post-link">
+                            <img class="magazine__thumbnail" src="img/magazine_thumb_02.png" alt="내셔널지오그래픽_트래블러_매거진_썸네일">
+                            <h5 class="magazine__article_headline">
+                                내셔널지오그래픽 트래블러 매거진
+                            </h5>
+                            <span class="magazine__article_subtitle">
+                                9월호, DEEP DIVE INTO THE WILD
+                            </span>
+                        </a>
+                    </article>
+
+                </div>
+                <!-- magazine_-wrap -->
+                <button class="btn_more">
+                    <span class="material-icons">
+                        add
                         </span>
-                    </a>
-                </article>
-                <article class="magazine__article">
-                    <a href="#" class="post-link">
-                        <img class="magazine__thumbnail" src="img/magazine_thumb_02.png" alt="내셔널지오그래픽_트래블러_매거진_썸네일">
-                        <h5 class="magazine__article_headline">
-                            내셔널지오그래픽 트래블러 매거진
-                        </h5>
-                        <span class="magazine__article_info">
-                            9월호, DEEP DIVE INTO THE WILD
+                        <span class="text">
+                            SEE MORE
                         </span>
-                    </a>
-                </article>
-                <button class="btn_more">see more</button>
+                    </button>
             </section>
             <!-- 쇼 프로그램 -->
             <section id="shows" class="content-container">
-                <a href="#"><h2 class="container-title">SHOWS</h2></a>
+                <a href="#" class="container-title"><h2>SHOWS</h2></a>
+                <ul class="slide__btns">
+                    <li><button>
+                        <span class="material-icons disabled">
+                        arrow_back_ios
+                        </span>
+                    </button></li>
+                    <li><button><span class="material-icons">
+                        arrow_forward_ios
+                        </span></button></li>
+                </ul>
                 <div class="slide-container">
                     <ul class="slide">
                         <li>
@@ -129,98 +179,113 @@
                                 <span class="show__title">킹덤 III</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="#" class="slide_more">
+                                SEE MORE
+                            </a>
+                        </li>
                     </ul>
                 </div>
+                <div class="shows__bg"></div>
             </section>
             <!-- 스토어 -->
             <section id="store" class="content-container">
-                <a href="#"><h2 class="container-title">STORE</h2></a>
-                <article class="store__article">
-                    <a href="#" class="post-link">
-                        <img class="store__thumbnail" src="img/store_thumb_01.png" alt="내셔널지오그래픽_어패럴">
-                        <h5 class="store__article_headline">
-                            내셔널지오그래픽 어패럴
-                        </h5>
-                        <span class="store__article_info">
-                            2021FW 컬렉션
-                        </span>
-                    </a>
-                </article>
-                <article class="store__article">
-                    <a href="#" class="post-link">
-                        <img class="store__thumbnail" src="img/store_thumb_02.png" alt="스킨플레이어">
-                        <h5 class="store__article_headline">
-                            스킨플레이어
-                        </h5>
-                        <span class="store__article_info">
-                            내셔널지오그래픽 모바일 액세서리
-                        </span>
-                    </a>
-                </article>
+                <a href="#" class="container-title"><h2>STORE</h2></a>
+                <div class="store__wrap">
+                    <article class="store__article">
+                        <a href="#" class="post-link">
+                            <img class="store__thumbnail" src="img/store_thumb_01.png" alt="내셔널지오그래픽_어패럴">
+                            <h5 class="store__article_headline">
+                                내셔널지오그래픽 어패럴
+                            </h5>
+                            <span class="store__article_subtitle">
+                                2021FW 컬렉션
+                            </span>
+                        </a>
+                    </article>
+                    <article class="store__article">
+                        <a href="#" class="post-link">
+                            <img class="store__thumbnail" src="img/store_thumb_02.png" alt="스킨플레이어">
+                            <h5 class="store__article_headline">
+                                스킨플레이어
+                            </h5>
+                            <span class="store__article_subtitle">
+                                내셔널지오그래픽 모바일 액세서리
+                            </span>
+                        </a>
+                    </article>
+                </div>
+                <!--store__wrap  -->
             </section>
         </main>
         <footer id="footer">
-            <ul class="footer__menu">
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">BRAND</a></li>
-                <li><a href="#">SHOWS</a></li>
-                <li><a href="#">YOUTUBE</a></li>
-                <li><a href="#">NEWS</a></li>
-                <li><a href="#">MAGAZINE</a></li>
-                <li><a href="#">STORE</a></li>
-            </ul>
-            <address>
-                <span>CONTACT US</span>
-                <ul class="address">
-                    <li>
-                        <span class="address__part-name">
-                            의류
-                        </span>
-                        <span class="address__phone-number">
-                            02.1588.2906
-                        </span>
-                    </li>
-                    <li>
-                        <span class="address__part-name">
-                            매거진
-                        </span>
-                        <span class="address__phone-number">
-                            02.2004.8800
-                        </span>
-                    </li>
-                    <li>
-                        <span class="address__part-name">
-                            트래블러 매거진
-                        </span>
-                        <span class="address__phone-number">
-                            02.763.8600
-                        </span>
-                    </li>
-                    <li>
-                        <span class="address__part-name">
-                            방송
-                        </span>
-                        <span class="address__phone-number">
-                            02.3490.2742
-                        </span>
-                    </li>
-                    <li>
-                        <span class="address__part-name">
-                            모바일 액세서리
-                        </span>
-                        <span class="address__phone-number">
-                            080.643.1234
-                        </span>
-                    </li>
+            <div class="footer__wrap">
+                <ul class="footer__menu">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">BRAND</a></li>
+                    <li><a href="#">SHOWS</a></li>
+                    <li><a href="#">YOUTUBE</a></li>
+                    <li><a href="#">NEWS</a></li>
+                    <li><a href="#">MAGAZINE</a></li>
+                    <li><a href="#">STORE</a></li>
                 </ul>
-            </address>
-            <span class="copyright">
-                COPYRIGHT &copy; 2018 NATIONAL GEOGRAPHIC KOREA LLT. ALL RIGHT RESERVED
-            </span>
-            <ul class="footer__link">
-                <li><a href="#">개인정보 취급방침(업데이트됨)</a></li>
-                <li><a href="#">이용약관</a></li>
-            </ul>
+                <address>
+                    <ul class="address">
+                        <li><span>CONTACT US</span></li>
+                        <li>
+                            <span class="address__part-name">
+                                의류
+                            </span>
+                            <span class="address__phone-number">
+                                02.1588.2906
+                            </span>
+                        </li>
+                        <li>
+                            <span class="address__part-name">
+                                매거진
+                            </span>
+                            <span class="address__phone-number">
+                                02.2004.8800
+                            </span>
+                        </li>
+                        <li>
+                            <span class="address__part-name">
+                                트래블러 매거진
+                            </span>
+                            <span class="address__phone-number">
+                                02.763.8600
+                            </span>
+                        </li>
+                        <li>
+                            <span class="address__part-name">
+                                방송
+                            </span>
+                            <span class="address__phone-number">
+                                02.3490.2742
+                            </span>
+                        </li>
+                        <li>
+                            <span class="address__part-name">
+                                모바일 액세서리
+                            </span>
+                            <span class="address__phone-number">
+                                080.643.1234
+                            </span>
+                        </li>
+                    </ul>
+                </address>
+                <div class="footer__info">
+                    <span class="copyright">
+                        COPYRIGHT &copy; 2018 NATIONAL GEOGRAPHIC KOREA LLT. ALL RIGHT RESERVED
+                    </span>
+                    <ul class="footer__link">
+                        <li><a href="#">개인정보 취급방침(업데이트됨)</a></li>
+                        <li><a href="#">이용약관</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- footer_-wrap -->
         </footer>
     </div>
     <!-- container -->
