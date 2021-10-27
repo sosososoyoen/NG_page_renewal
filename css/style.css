@@ -43,13 +43,27 @@ body {
   display: block;
 }
 .menu > li > a {
+  position: relative;
   display: block;
   color: inherit;
   font-size: 1.25rem;
   padding: 1em;
   text-shadow: #333 1px 0 10px;
 }
-
+.menu > li > a::after {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  display: block;
+  content: "";
+  background: var(--yellow);
+  width: 0;
+  height: 4px;
+  transition: 0.2s;
+}
+.menu > li:hover > a::after {
+  width: 100%;
+}
 .header__video {
   position: absolute;
   top: 0;
@@ -90,6 +104,11 @@ body {
 .social > li > a {
   display: block;
   margin: 2em;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+.social > li > a:hover {
+  opacity: 1;
 }
 /* 스크롤 버튼 */
 .btn-scroll {
@@ -106,6 +125,7 @@ body {
 }
 .btn-scroll > .mouse {
   position: relative;
+  display: block;
   border: 2px solid white;
   width: 1.875em;
   height: 3.125em;
@@ -114,6 +134,7 @@ body {
 }
 .btn-scroll > .mouse > .wheel {
   position: absolute;
+  display: block;
   width: 3px;
   height: 35%;
   background-color: var(--yellow);
@@ -122,7 +143,7 @@ body {
   top: 20%;
   transform: translateX(-50%);
 }
-.btn-scroll > span {
+.btn-scroll > .text__scroll {
   font-family: "GeographThin";
   line-height: 1.2;
   font-size: 1.5rem;
@@ -168,6 +189,7 @@ section a {
   justify-content: flex-start;
 }
 
+/* 버튼 */
 .btn_more {
   position: absolute;
   font-family: "GeographBold";
@@ -201,7 +223,10 @@ section a {
   font-size: 1.2em;
   margin-bottom: -5px;
 }
-
+/* 뉴스 */
+section:not(:nth-child(3)) {
+  opacity: 0;
+}
 .news__article:not(:last-child) {
   margin-right: 1.25em;
 }
@@ -219,6 +244,29 @@ section a {
   font-size: 1.25rem;
   line-height: 2rem;
   color: white;
+}
+
+/* 호버효과 */
+.post-link > figure {
+  overflow: hidden;
+}
+#news figure {
+  width: 382px;
+  height: 240px;
+}
+#magazine figure,
+#store figure {
+  width: 550px;
+  height: 250px;
+}
+.post__thumbnail,
+.slide img {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.post-link:hover .post__thumbnail {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 /* 매거진 */
@@ -241,16 +289,19 @@ section a {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -40%);
   width: 100vw;
-  height: 100%;
+  height: 120%;
   z-index: -1;
-  background: url("../img/show_bg.jpg");
+  background: center / cover no-repeat url("../img/show_bg.jpg");
+  transition: 2s;
 }
 .slide {
   width: 800%;
   position: absolute;
   left: 0;
+  transform: translateX(1000px);
+  opacity: 0;
 }
 .slide__btns {
   width: 100%;
@@ -273,10 +324,24 @@ section a {
 .disabled {
   opacity: 0.3;
 }
-
+.off {
+  opacity: 0;
+}
+.on {
+  opacity: 1;
+}
 .slide > li {
   float: left;
   margin-right: 5em;
+}
+/* 호버 효과 */
+.slide > li figure {
+  width: 500px;
+  height: 320px;
+  overflow: hidden;
+}
+.slide > li:hover img {
+  transform: scale(1.1);
 }
 .slide > li > a > span {
   font-family: "KoPubDotumBold";
@@ -318,9 +383,26 @@ section a {
   font-size: 1.563rem;
   line-height: 2.5em;
 }
+.slide > li:last-child {
+  width: 8%;
+  height: 100%;
+}
 .slide_more {
+  position: relative;
+  width: 500px;
+  height: 320px;
   text-align: center;
+  vertical-align: middle;
+}
+.slide_more > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-family: "GeographBold";
   font-size: 2em;
+  letter-spacing: 0.05em;
 }
 
 /* 푸터 */

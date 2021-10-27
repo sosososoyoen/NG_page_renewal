@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animation.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="js/script.js" defer></script>
     <title>내셔널지오그래픽_리뉴얼</title>
 </head>
 <body>
@@ -40,10 +42,10 @@
                 </ul>
             </div>
             <button onclick = "location.href = './index.html#news'" class="btn-scroll">
-                <div class="mouse">
-                    <div class="wheel"></div>
-                </div>
-                <span>scroll</span>
+                <span class="mouse">
+                    <span class="wheel"></span>
+                </span>
+                <span class="text__scroll">scroll</span>
             </button>
 
         </header>
@@ -54,8 +56,10 @@
                 <div class="news__wrap">
 
                     <article class="news__article">
-                        <a href="#" class="news-link">
-                            <img class="news__thumbnail" src="img/news_thumb_01.png" alt="맨몸으로_절벽을_오르는_등반가_알렉스_호놀드의_프리솔로_썸네일">
+                        <a href="#" class="post-link">
+                            <figure>
+                                <img class="post__thumbnail" src="img/news_thumb_01.png" alt="맨몸으로_절벽을_오르는_등반가_알렉스_호놀드의_프리솔로_썸네일">
+                            </figure>
                             <h5 class="news__article_headline">
                                 맨몸으로 절벽을 오르는 등반가,<br>알렉스 호놀드의 &lt;프리솔로&gt;
                             </h5>
@@ -63,7 +67,9 @@
                     </article>
                     <article class="news__article">
                         <a href="#" class="post-link">
-                            <img class="news__thumbnail" src="img/news_thumb_02.png" alt="인류의_새로운_시작_그_두번째_이야기_썸네일">
+                            <figure>
+                                <img class="post__thumbnail" src="img/news_thumb_02.png" alt="인류의_새로운_시작_그_두번째_이야기_썸네일">
+                            </figure>
                             <h5 class="news__article_headline">
                                 인류의 새로운 시작, 그 두번째 이야기
                             </h5>
@@ -71,7 +77,9 @@
                     </article>
                     <article class="news__article">
                         <a href="#" class="post-link">
-                            <img class="news__thumbnail" src="img/news_thumb_03.png" alt="일회용_플라스틱_사용_줄이기_캠페인_썸네일">
+                            <figure>
+                                <img class="post__thumbnail" src="img/news_thumb_03.png" alt="일회용_플라스틱_사용_줄이기_캠페인_썸네일">
+                            </figure>
                             <h5 class="news__article_headline">
                                 일회용 플라스틱 사용 줄이기 캠페인!
                             </h5>
@@ -95,7 +103,9 @@
                 <div class="magazine__wrap">
                     <article class="magazine__article">
                         <a href="#" class="post-link">
-                            <img class="magazine__thumbnail" src="img/magazine_thumb_01.png" alt="내셔널지오그래픽_매거진_썸네일">
+                            <figure>
+                                <img class="post__thumbnail" src="img/magazine_thumb_01.png" alt="내셔널지오그래픽_매거진_썸네일">
+                            </figure>
                             <h5 class="magazine__article_headline">
                                 내셔널지오그래픽 매거진
                             </h5>
@@ -106,7 +116,9 @@
                     </article>
                     <article class="magazine__article">
                         <a href="#" class="post-link">
-                            <img class="magazine__thumbnail" src="img/magazine_thumb_02.png" alt="내셔널지오그래픽_트래블러_매거진_썸네일">
+                            <figure>
+                                <img class="post__thumbnail" src="img/magazine_thumb_02.png" alt="내셔널지오그래픽_트래블러_매거진_썸네일">
+                            </figure>
                             <h5 class="magazine__article_headline">
                                 내셔널지오그래픽 트래블러 매거진
                             </h5>
@@ -131,12 +143,12 @@
             <section id="shows" class="content-container">
                 <a href="#" class="container-title"><h2>SHOWS</h2></a>
                 <ul class="slide__btns">
-                    <li><button>
-                        <span class="material-icons disabled">
+                    <li><button class="prev_btn disabled">
+                        <span class="material-icons">
                         arrow_back_ios
                         </span>
                     </button></li>
-                    <li><button><span class="material-icons">
+                    <li><button class="next_btn"><span class="material-icons">
                         arrow_forward_ios
                         </span></button></li>
                 </ul>
@@ -144,54 +156,72 @@
                     <ul class="slide">
                         <li>
                             <a href="#">
-                                <img src="img/slide_img_01.png" alt="늑대의_왕국">
+                                <figure>
+                                    <img src="img/slide_img_01.png" alt="늑대의_왕국">
+                                </figure>
                                 <span class="shows__category">WILD</span>
                                 <span class="show__title">늑대의 왕국</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="img/slide_img_02.png" alt="글로벌_시티즌">
+                                <figure>
+                                    <img src="img/slide_img_02.png" alt="글로벌_시티즌">
+                                </figure>
                                 <span class="shows__category">REALITY</span>
                                 <span class="show__title">글로벌 시티즌</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="img/slide_img_03.png" alt="고든램지_언차티드">
+                                <figure>
+                                    <img src="img/slide_img_03.png" alt="고든램지_언차티드">
+                                </figure>
                                 <span class="shows__category">FOOD</span>
                                 <span class="show__title">고든램지: 언차티드</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="img/slide_img_04.png" alt="샤크어택5">
+                                <figure>
+                                    <img src="img/slide_img_04.png" alt="샤크어택5">
+                                </figure>
                                 <span class="shows__category">SHARK FEST</span>
                                 <span class="show__title">샤크 어택 5</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="img/slide_img_05.png" alt="히틀러_심판의_날2">
+                                <figure>
+                                    <img src="img/slide_img_05.png" alt="히틀러_심판의_날2">
+                                </figure>
                                 <span class="shows__category">MILITARY</span>
                                 <span class="show__title">히틀러 심판의 날 2</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="img/slide_img_06.png" alt="킹덤3">
+                                <figure>
+                                    <img src="img/slide_img_06.png" alt="킹덤3">
+                                </figure>
                                 <span class="shows__category">WILD</span>
                                 <span class="show__title">킹덤 III</span>
                             </a>
                         </li>
                         <li>
                             <a href="#" class="slide_more">
-                                SEE MORE
+
+                                   <div>
+                                    <span class="material-icons">
+                                        add
+                                        </span>
+                                       SEE MORE
+                                    </div>
                             </a>
                         </li>
                     </ul>
                 </div>
-                <div class="shows__bg"></div>
+                <div class="shows__bg off"></div>
             </section>
             <!-- 스토어 -->
             <section id="store" class="content-container">
@@ -199,7 +229,9 @@
                 <div class="store__wrap">
                     <article class="store__article">
                         <a href="#" class="post-link">
-                            <img class="store__thumbnail" src="img/store_thumb_01.png" alt="내셔널지오그래픽_어패럴">
+                            <figure>
+                                <img class="post__thumbnail" src="img/store_thumb_01.png" alt="내셔널지오그래픽_어패럴">
+                            </figure>
                             <h5 class="store__article_headline">
                                 내셔널지오그래픽 어패럴
                             </h5>
@@ -210,7 +242,9 @@
                     </article>
                     <article class="store__article">
                         <a href="#" class="post-link">
-                            <img class="store__thumbnail" src="img/store_thumb_02.png" alt="스킨플레이어">
+                            <figure>
+                                <img class="post__thumbnail" src="img/store_thumb_02.png" alt="스킨플레이어">
+                            </figure>
                             <h5 class="store__article_headline">
                                 스킨플레이어
                             </h5>
