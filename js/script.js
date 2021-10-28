@@ -99,7 +99,6 @@ function stars(){
 
     while(i < count){
         const star = document.createElement("i");
-        const stars = document.createElement("div");
         const x = Math.floor(Math.random() * main.clientWidth);
         const y = Math.floor(Math.random() * main.clientHeight);
 
@@ -114,8 +113,7 @@ function stars(){
         star.style.animationDuration = 2+duration+"s";
         star.style.animationDelay = duration+"s";
 
-        stars.appendChild(star);
-        main.appendChild(stars);
+        main.appendChild(star);
         i++
         
     }  
