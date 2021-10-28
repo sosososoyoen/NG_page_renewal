@@ -30,10 +30,26 @@ body {
 }
 /* 내비게이션 */
 #nav {
+  position: fixed;
   display: flex;
+  width: 100vw;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0);
   justify-content: center;
-  margin-top: 1.25em;
+  padding: 0.6em;
   justify-content: space-around;
+  z-index: 999;
+  transition: 0.5s;
+}
+.nav_fixed {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#nav.is-Down {
+  transform: translate(-50%, 0);
+}
+#nav.is-Up {
+  transform: translate(-50%, -100%);
 }
 .menu {
   display: flex;
@@ -43,13 +59,27 @@ body {
   display: block;
 }
 .menu > li > a {
+  position: relative;
   display: block;
   color: inherit;
   font-size: 1.25rem;
   padding: 1em;
   text-shadow: #333 1px 0 10px;
 }
-
+.menu > li > a::after {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  display: block;
+  content: "";
+  background: var(--yellow);
+  width: 0;
+  height: 4px;
+  transition: 0.2s;
+}
+.menu > li:hover > a::after {
+  width: 100%;
+}
 .header__video {
   position: absolute;
   top: 0;
@@ -90,6 +120,11 @@ body {
 .social > li > a {
   display: block;
   margin: 2em;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+.social > li > a:hover {
+  opacity: 1;
 }
 /* 스크롤 버튼 */
 .btn-scroll {
@@ -102,10 +137,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  opacity: 0.6;
+  opacity: 0.4;
+  transition: 0.2s;
+}
+.btn-scroll:hover {
+  opacity: 1;
 }
 .btn-scroll > .mouse {
   position: relative;
+  display: block;
   border: 2px solid white;
   width: 1.875em;
   height: 3.125em;
@@ -114,6 +154,7 @@ body {
 }
 .btn-scroll > .mouse > .wheel {
   position: absolute;
+  display: block;
   width: 3px;
   height: 35%;
   background-color: var(--yellow);
@@ -122,7 +163,7 @@ body {
   top: 20%;
   transform: translateX(-50%);
 }
-.btn-scroll > span {
+.btn-scroll > .text__scroll {
   font-family: "GeographThin";
   line-height: 1.2;
   font-size: 1.5rem;
@@ -168,6 +209,7 @@ section a {
   justify-content: flex-start;
 }
 
+/* 버튼 */
 .btn_more {
   position: absolute;
   font-family: "GeographBold";
@@ -194,14 +236,32 @@ section a {
   left: 50%;
   bottom: -3px;
   transform: translateX(-50%);
-  z-index: 9;
+  z-index: -1;
+  transition: 0.2s;
 }
 .btn_more > span.material-icons {
   color: white;
   font-size: 1.2em;
   margin-bottom: -5px;
+  transition: 0.2s;
+}
+.btn_more:hover > span.text::after,
+.slide_more:hover > div::after {
+  height: 100%;
+}
+.btn_more:hover,
+.slide_more:hover > div {
+  color: black;
+}
+.btn_more:hover > span.material-icons,
+.slide_more:hover > div > span {
+  transform: rotate(180deg);
 }
 
+/* 뉴스 */
+section:not(:nth-child(3)) {
+  opacity: 0;
+}
 .news__article:not(:last-child) {
   margin-right: 1.25em;
 }
@@ -217,8 +277,55 @@ section a {
 .magazine__article_subtitle,
 .store__article_subtitle {
   font-size: 1.25rem;
-  line-height: 2rem;
+  line-height: 2.5rem;
   color: white;
+}
+/* 포스트 제목 호버 효과 */
+.news__article_headline,
+.magazine__article_headline {
+  position: relative;
+  width: max-content;
+}
+
+.news__article_headline::after,
+.magazine__article_headline::after {
+  position: absolute;
+  display: block;
+  content: "";
+  height: 2px;
+  width: 0;
+  background-color: var(--yellow);
+  left: 0;
+  bottom: -3px;
+  z-index: -1;
+  transition: 0.2s;
+}
+
+/* 호버효과 */
+.post-link > figure {
+  overflow: hidden;
+}
+#news figure {
+  width: 382px;
+  height: 240px;
+}
+#magazine figure,
+#store figure {
+  width: 550px;
+  height: 250px;
+}
+.post__thumbnail,
+.slide img {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.post-link:hover .post__thumbnail {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.post-link:hover .news__article_headline::after,
+.post-link:hover .magazine__article_headline::after {
+  width: 100%;
 }
 
 /* 매거진 */
@@ -241,16 +348,18 @@ section a {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -40%);
   width: 100vw;
-  height: 100%;
-  z-index: -1;
-  background: url("../img/show_bg.jpg");
+  height: 120%;
+  z-index: -3;
+  background: center / cover no-repeat url("../img/show_bg.jpg");
 }
 .slide {
   width: 800%;
   position: absolute;
   left: 0;
+  transform: translateX(1000px);
+  opacity: 0;
 }
 .slide__btns {
   width: 100%;
@@ -273,11 +382,31 @@ section a {
 .disabled {
   opacity: 0.3;
 }
-
+.off {
+  opacity: 0;
+}
+.on {
+  opacity: 1;
+}
 .slide > li {
   float: left;
   margin-right: 5em;
 }
+/* 호버 효과 */
+.slide img {
+  opacity: 0.6;
+}
+.slide > li figure {
+  width: 500px;
+  height: 320px;
+  overflow: hidden;
+  background: black;
+}
+.slide > li:hover img {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
 .slide > li > a > span {
   font-family: "KoPubDotumBold";
   display: block;
@@ -318,11 +447,57 @@ section a {
   font-size: 1.563rem;
   line-height: 2.5em;
 }
-.slide_more {
-  text-align: center;
-  font-size: 2em;
+.slide > li:last-child {
+  width: 8%;
+  height: 100%;
 }
-
+/* 슬라이드 더보기 */
+.slide_more {
+  position: relative;
+  width: 500px;
+  height: 320px;
+  text-align: center;
+  vertical-align: middle;
+}
+.slide_more > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-family: "GeographBold";
+  font-size: 2em;
+  letter-spacing: 0.05em;
+}
+.slide_more > div::after {
+  position: absolute;
+  display: block;
+  content: "";
+  height: 0;
+  width: 100%;
+  background-color: var(--yellow);
+  left: 50%;
+  bottom: -3px;
+  transform: translateX(-50%);
+  z-index: -1;
+  transition: 0.2s;
+}
+.slide_more > div > span {
+  transition: 0.2s;
+}
+/* 스토어 */
+#store .post-link {
+  transition: 0.3s;
+}
+#store .post-link:hover {
+  padding: 0.7em 1em;
+  margin-top: -1.4em;
+  background: var(--yellow);
+}
+#store .post-link:hover > h5,
+#store .post-link:hover > span {
+  color: black;
+}
 /* 푸터 */
 #footer {
   background-color: #151515;
@@ -401,4 +576,32 @@ address {
 }
 .address__part-name {
   display: block;
+}
+
+/* 별 */
+main {
+  position: relative;
+}
+main i {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  z-index: -2;
+  box-shadow: 0 0 10px white, 0 0 20px white, 0 0 40px white, 0 0 80px white;
+  animation: twinkle 2s linear infinite;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
 }
