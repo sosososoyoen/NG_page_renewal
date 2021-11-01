@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/font.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animation.css">
+    <!-- <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/font.css"> -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- <link rel="stylesheet" href="css/animation.css"> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="js/script.js" defer></script>
     <title>내셔널지오그래픽_리뉴얼</title>
@@ -18,7 +18,7 @@
                 <a href="#" class="nav__logo">
                     <img src="img/logo.png" alt="">
                 </a>
-                <ul class="menu">
+                <ul class="nav__menu">
                     <li><a href="#">HOME</a></li>
                     <li><a href="#">BRAND</a></li>
                     <li><a href="#">SHOWS</a></li>
@@ -30,22 +30,22 @@
         </nav>
         <header id="header">
             <video class="header__video" src="video/intro.m4v" muted loop autoplay></video>
-            <div class="overlay">
-                <hgroup class="main-title">
+            <div class="header__overlay">
+                <hgroup class="header__main-title">
                     <h2>ONE STEP TO THE EDGE<br>OF IMPOSSIBLE<br>AND THEN, FURTHER.</h2>
                     <h3>지구와 인류 그리고 '우리'를 둘러싼 살아있는 이야기</h3>
                 </hgroup>
-                <ul class="social">
+                <ul class="header__social">
                     <li><a href="#"><img src="img/icon_yt.png" alt="유튜브 바로가기"></a></li>
                     <li><a href="#"><img src="img/icon_fb.png" alt="페이스북 바로가기"></a></li>
                     <li><a href="#"><img src="img/icon_insta.png" alt="인스타그램 바로가기"></a></li>
                 </ul>
             </div>
             <button onclick = "location.href = './index.html#news'" class="btn-scroll">
-                <span class="mouse">
-                    <span class="wheel"></span>
+                <span class="btn-scroll__mouse">
+                    <span class="btn-scroll__wheel"></span>
                 </span>
-                <span class="text__scroll">scroll</span>
+                <span class="btn-scroll__text">scroll</span>
             </button>
 
         </header>
@@ -91,11 +91,11 @@
                 </div>
                 <!-- news wrap -->
 
-                <button class="btn_more">
-                    <span class="material-icons">
+                <button class="btn-more">
+                    <span class="material-icons btn-more__icon">
                         add
                         </span>
-                        <span class="text">
+                        <span class="btn-more__text">
                             SEE MORE
                         </span>
                     </button>
@@ -230,7 +230,7 @@
             <section id="store" class="content-container">
                 <a href="#" class="container-title"><h2>STORE</h2></a>
                 <div class="store__wrap">
-                    <article class="store__article">
+                    <article class="store__article first">
                         <a href="#" class="post-link">
                             <figure>
                                 <img class="post__thumbnail" src="img/store_thumb_01.png" alt="내셔널지오그래픽_어패럴">
@@ -243,7 +243,7 @@
                             </span>
                         </a>
                     </article>
-                    <article class="store__article">
+                    <article class="store__article second">
                         <a href="#" class="post-link">
                             <figure>
                                 <img class="post__thumbnail" src="img/store_thumb_02.png" alt="스킨플레이어">
@@ -329,6 +329,7 @@
             </div>
             <!-- footer_-wrap -->
         </footer>
+        <div class="stars"></div>
     </div>
     <!-- container -->
 </body>

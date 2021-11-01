@@ -1,0 +1,96 @@
+%btn {
+  border: none;
+  background: transparent;
+  color: $color-white;
+  cursor: pointer;
+}
+
+//스크롤 버튼
+.btn-scroll {
+  @extend %btn;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.4;
+  transition: 0.2s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+.btn-scroll__mouse {
+  position: relative;
+  display: block;
+  border: 2px solid $color-white;
+  width: 1.875em;
+  height: 3.125em;
+  border-radius: 0.938em;
+}
+.btn-scroll__wheel {
+  position: absolute;
+  display: block;
+  width: 3px;
+  height: 35%;
+  background-color: $color-yellow;
+  border-radius: 20%;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+}
+.btn-scroll__text {
+  font-family: "GeographThin";
+  line-height: 1.2;
+  font-size: 1.5rem;
+  color: $color-white;
+}
+
+//더보기 버튼
+.btn-more {
+  position: absolute;
+  right: 0px;
+  display: flex;
+  font-family: "GeographBold";
+  bottom: 2em;
+  font-size: 1em;
+  letter-spacing: 0.075em;
+  @extend %btn;
+}
+.btn-more__text {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: "";
+    height: 2px;
+    width: 100%;
+    background-color: $color-yellow;
+    left: 50%;
+    bottom: -3px;
+    transform: translateX(-50%);
+    z-index: -1;
+    transition: 0.2s;
+  }
+}
+.btn-more__icon {
+  color: white;
+  font-size: 1.2em;
+  margin-bottom: -5px;
+  transition: 0.2s;
+}
+.btn-more:hover:hover > .btn-more__text::after,
+.slide_more:hover > div::after {
+  height: 100%;
+}
+.btn_more:hover,
+.slide_more:hover > div {
+  color: black;
+}
+.btn-more__icon,
+.slide_more:hover > div > span {
+  transform: rotate(180deg);
+}

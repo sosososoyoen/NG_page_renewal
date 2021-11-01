@@ -1,6 +1,6 @@
 
 const sections = document.querySelectorAll("section")
-const menus = document.querySelectorAll(".menu > li")
+const menus = document.querySelectorAll(".nav__menu > li")
 let lastScrollTop = 0;
 const navBar = document.querySelector("#nav");
 
@@ -77,7 +77,7 @@ window.addEventListener("scroll", ()=> {
     })
 
     // 내비게이션 스크롤 이벤트
-    navBar.classList.toggle("nav_fixed",window.scrollY>document.querySelector(".overlay").clientHeight/2.5);
+    navBar.classList.toggle("nav--fixed",window.scrollY>document.querySelector(".header__overlay").clientHeight/2.5);
     var scrollTop = window.scrollY;
     if (scrollTop > lastScrollTop) {
         navBar.classList.add("is-Up");
@@ -96,6 +96,7 @@ function stars(){
     const count = 200;
     const main = document.querySelector("main")
     let i = 0;
+    const starContainer = document.querySelector(".stars")
 
     while(i < count){
         const star = document.createElement("i");
@@ -112,11 +113,11 @@ function stars(){
 
         star.style.animationDuration = 2+duration+"s";
         star.style.animationDelay = duration+"s";
-
-        main.appendChild(star);
+        starContainer.append(star)
         i++
         
     }  
+    main.appendChild(starContainer);
 }
 stars();
 // 재업

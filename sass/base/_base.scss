@@ -1,0 +1,11 @@
+body {
+  font-family: "KoPubDotumMedium", sans-serif;
+  background-color: $color-black;
+  color: $color-white;
+  scroll-behavior: smooth;
+}
+.page_container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}

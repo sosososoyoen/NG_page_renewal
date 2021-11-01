@@ -1,0 +1,78 @@
+#footer {
+  background-color: #151515;
+  color: $color-gray;
+  padding: 3em 5em;
+}
+.footer__wrap {
+  width: 1200px;
+  margin: 0 auto;
+}
+.footer__menu {
+  display: block;
+  content: "";
+  clear: both;
+}
+.footer__menu > li {
+  float: left;
+}
+.footer__menu > li > a {
+  font-family: "GeographRegular";
+  display: block;
+  padding: 1em;
+  color: $color-gray;
+}
+.footer__menu::after,
+address::after,
+.address::after,
+.footer__info::after,
+.footer__link::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+address {
+  margin: 1em 0;
+}
+.address > li {
+  float: left;
+  padding: 1em;
+}
+.address > li:first-child > span {
+  position: relative;
+}
+.address > li:first-child > span::after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 1px;
+  height: 100%;
+  background: $color-gray;
+  right: -1em;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.address__part-name,
+.address__phone-number {
+  font-size: 0.8rem;
+}
+
+.copyright {
+  display: block;
+  float: left;
+  margin-right: 2em;
+}
+.footer__info {
+  padding: 1em;
+  font-size: 0.8rem;
+  margin-top: 1em;
+}
+.footer__link > li {
+  float: left;
+  margin-right: 1em;
+}
+.footer__link > li > a {
+  color: $color-gray;
+}
+.address__part-name {
+  display: block;
+}

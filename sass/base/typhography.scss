@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "KoPubDotumMedium";
+  src: url("../font/KOPUBWORLD_TTF_FONTS-1/KoPubWorld\ Dotum\ Medium.ttf")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "KoPubDotumBold";
+  src: url("../font/KOPUBWORLD_TTF_FONTS-1/KoPubWorld\ Dotum\ Bold.ttf")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GeographRegular";
+  src: url("../font/geograph-edit-cufonfonts/geographeditwebregular.ttf")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GeographBold";
+  src: url("../font/geograph-edit-cufonfonts/geographwebbold.ttf")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GeographThin";
+  src: url("../font/geograph-edit-cufonfonts/geographeditwebthin.ttf")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}

@@ -1,0 +1,62 @@
+#header {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+.header__overlay {
+  position: absolute;
+  width: 100vw;
+  min-height: 100vh;
+  font-family: "GeographRegular";
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.header__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  z-index: -1;
+}
+.header__main-title {
+  width: 50rem;
+  position: relative;
+  padding-left: 2em;
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 0.313rem;
+    height: 95%;
+    background-color: $color-yellow;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9;
+  }
+  h2 {
+    font-family: "GeographRegular";
+    font-size: 3.75rem;
+    line-height: 5rem;
+  }
+  h3 {
+    font-family: "KoPubDotumMedium";
+    font-size: 1.7rem;
+    letter-spacing: 0.025rem;
+    line-height: 4rem;
+  }
+}
+.header__social > li > a {
+  display: block;
+  margin: 2rem;
+  opacity: 0.5;
+  transition: 0.3s;
+  &:hover {
+    opacity: 1;
+  }
+}

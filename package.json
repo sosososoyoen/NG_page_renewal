@@ -1,0 +1,23 @@
+{
+  "name": "ng_page_renewal",
+  "version": "1.0.0",
+  "description": "한국 내셔널 지오그래픽 사이트 리뉴얼",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/main.css -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soonmac/NG_page_renewal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soonmac/NG_page_renewal/issues"
+  },
+  "homepage": "https://github.com/soonmac/NG_page_renewal#readme",
+  "devDependencies": {
+    "node-sass": "^6.0.1"
+  }
+}
