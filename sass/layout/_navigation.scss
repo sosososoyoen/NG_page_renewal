@@ -32,15 +32,9 @@
         text-shadow: #333 1px 0 10px;
 
         &::after {
-          position: absolute;
+          @include marker-bottom-Default;
           bottom: 0.313rem;
-          left: 0;
-          display: block;
-          content: "";
-          background: $color-yellow;
-          width: 0;
           height: 4px;
-          transition: 0.2s;
         }
       }
     }

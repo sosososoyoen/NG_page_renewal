@@ -1,0 +1,81 @@
+// 섹션 컴포넌트
+.content-container {
+  position: relative;
+  max-width: 75rem;
+  padding: 0.625em 0 8rem 0;
+  margin: 0 auto 8em auto;
+
+  .container-title {
+    position: relative;
+    font-family: "GeographRegular";
+    font-size: 2.5rem;
+    letter-spacing: 0.025rem;
+    width: max-content;
+    margin: 2.7em 0;
+  }
+  .marker-left {
+    &::before {
+      @include marker-left-Default($color-yellow);
+      left: -1rem;
+      width: 3px;
+      height: 100%;
+      z-index: 9;
+    }
+  }
+
+  .wrap--flex {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &:not(:nth-child(3)) {
+    opacity: 0;
+  }
+}
+// 아티클 설정
+.article__headline {
+  font-family: "KoPubDotumBold";
+  font-size: 1.563rem;
+  line-height: 1.2;
+  margin-top: 0.5em;
+}
+.article__subtitle {
+  font-size: 1.25rem;
+  line-height: 2.5rem;
+}
+
+//포스트 제목 호버
+.post-link {
+  .article__headline {
+    position: relative;
+    width: max-content;
+    &::after {
+      @include marker-bottom-Default;
+      height: 2px;
+      bottom: -3px;
+      z-index: -1;
+    }
+  }
+  &:hover {
+    .article__headline::after {
+      width: 100%;
+    }
+  }
+
+  //썸네일 호버 효과
+  figure {
+    overflow: hidden;
+    width: max-content;
+    height: max-content;
+  }
+  .post__thumbnail {
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  &:hover {
+    .post__thumbnail {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+  }
+}

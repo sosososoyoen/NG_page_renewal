@@ -1,0 +1,9 @@
+.news__article {
+  &:not(:last-child) {
+    margin-right: 1.25em;
+  }
+}
+.magazine__article:first-child,
+.store__article:first-child {
+  margin-right: 5rem;
+}

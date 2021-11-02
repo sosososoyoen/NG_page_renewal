@@ -1,0 +1,148 @@
+#shows {
+    position: relative;
+}
+.slide-container {
+    position: relative;
+    width: 550px;
+    height: 360px;
+    display: flex;
+} //   슬라이드 컨테이너
+
+
+.shows__bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    width: 100vw;
+    height: 120%;
+    z-index: -3;
+    background: center / cover no-repeat url("../img/show_bg.jpg");
+} //배경
+
+
+.slide__btns {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2.5em;
+
+    li {
+        float: left;
+        margin-right: 5em;
+        button {
+            @extend %btn;
+            span {
+                font-size: 2.5rem;
+            }
+            &:first-child {
+                margin-right: 3em;
+            }
+        }
+    }
+}  //슬라이드버튼
+.disabled {
+    opacity: 0.3;
+}
+.on {
+    opacity: 1;
+}
+.off {
+      opacity:0;
+}
+
+.slide {
+    width: 800%;
+    position: absolute;
+    left: 0;
+    transform: translateX(1000px);
+    opacity: 0;
+    li{
+        float: left;
+        margin-right: 5em;
+        figure {
+            width: 500px;
+            height: 320px;
+            overflow: hidden;
+            background: black;
+        }
+        &:hover {
+            img {
+                transform: scale(1.05);
+            }
+        }
+        span {
+            font-family: "KoPubDotumBold";
+        }
+        img {
+            -webkit-transition: 0.3s ease-in-out;
+            transition: 0.3s ease-in-out;
+        }
+        .shows__category {
+            position: relative;
+            display:block;
+            width: max-content;
+            margin-top: 1em;
+            font-size: 1.25em;
+            letter-spacing: 0.05em;
+            padding: 0 1em 0 1em;
+
+            &::before {
+                @extend %category-marker;
+                @include colCenter;
+                left: 0;
+            }
+            &::after {
+                @extend %category-marker;
+                right:0;
+                @include colCenter;
+            }
+        } //쇼 카테고리
+        .show__title {
+            display:block;
+            font-size: 1.563rem;
+            line-height: 2.5em;
+        } //프로그램 이름
+        &:last-child {
+            width: 8%;
+            height: 100%;
+        }
+    } //슬라이드 요소 li
+
+
+    //슬라이드 더보기
+    .slide_more {
+        position: relative;
+        width: 500px;
+        height: 320px;
+        div {
+            @include center;
+            font-family: "GeographBold";
+            font-size: 2em;
+            letter-spacing: 0.05em;
+            &::after {
+                @include marker-bottom-Default;
+                @include rowCenter;
+                height: 0;
+                width: 100%;
+                bottom: -3px;
+                z-index: -1;
+            }
+            .btn-more__icon {
+                font-family: 'Material Icons';
+                transition: 0.2s;
+            }
+      }
+      &:hover {
+          div {
+              color: $color-black;
+              &::after{
+                  height: 100%;
+              }
+              span {
+                  transform: rotate(180deg);
+              }
+          }
+      }
+    }
+}

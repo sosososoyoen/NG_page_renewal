@@ -1,0 +1,12 @@
+/* 별 */
+main {
+    position: relative;
+  }
+  i {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    z-index: -2;
+    box-shadow: 0 0 10px white, 0 0 20px white, 0 0 40px white, 0 0 80px white;
+    animation: twinkle 2s linear infinite;
+  }
