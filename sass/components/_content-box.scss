@@ -1,9 +1,7 @@
 // 섹션 컴포넌트
 .content-container {
   position: relative;
-  max-width: 75rem;
-  padding: 0.625em 0 8rem 0;
-  margin: 0 auto 8em auto;
+  @extend %content-container;
 
   .container-title {
     position: relative;
@@ -13,24 +11,19 @@
     width: max-content;
     margin: 2.7em 0;
   }
-  .marker-left {
-    &::before {
-      @include marker-left-Default($color-yellow);
-      left: -1rem;
-      width: 3px;
-      height: 100%;
-      z-index: 9;
-    }
-  }
-
+  
   .wrap--flex {
     display: flex;
     justify-content: flex-start;
   }
-
+  
   &:not(:nth-child(3)) {
     opacity: 0;
   }
+}
+//마커 레프트
+.marker-left {
+  @include marker-left(3px)
 }
 // 아티클 설정
 .article__headline {

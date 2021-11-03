@@ -1,0 +1,36 @@
+
+.sub__nav{
+    position: static;
+    transform: translate(0, 0);
+    margin:0.5em 0;
+}
+.sub__nav--fixed {
+  position: fixed;
+  margin:0;
+  background-color: rgba($color-black, 0.5);
+}
+.sub__nav--is-Down {
+  transform: translate(0, 0);
+}
+.sub__nav--is-Up {
+  transform: translate(0, -100%);
+}
+
+// 서브 헤더
+.sub__header {
+    position:relative;
+    width: 100vw;
+    height: 23.438rem;
+    background: no-repeat center/cover url("../img/sub/sub_header.jpg");
+    .header__title {
+      position:absolute;
+      @include colCenter;
+      left: 15%;
+      font-family: "GeographBold";
+      font-size: 3.75rem;
+      letter-spacing: 0.1rem;
+    }
+    .marker-left {
+      @include marker-left(8px)
+    }
+  }

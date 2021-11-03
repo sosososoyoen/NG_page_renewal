@@ -151,6 +151,11 @@ table {
   width: 2px;
   height: 100%; }
 
+.content-container {
+  max-width: 75rem;
+  padding: 0.625em 0 8rem 0;
+  margin: 0 auto 8em auto; }
+
 body {
   font-family: "KoPubDotumMedium", sans-serif;
   background-color: black;
@@ -213,6 +218,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
   font-feature-settings: "liga"; }
+
+/*레이아웃*/
+.row-container {
+  max-width: 75em;
+  margin: 2.813em auto;
+  display: flex; }
+
+.dropdown__wrap {
+  justify-content: flex-end; }
+
+.pagination__wrap {
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 5em; }
 
 /* 별 */
 main {
@@ -278,41 +297,46 @@ i {
     opacity: 0; } }
 
 #nav {
-  position: fixed;
   display: flex;
   justify-content: center;
   justify-content: space-around;
-  padding: 0.6rem;
   width: 100vw;
-  left: 50%;
-  top: 0;
-  transform: translate(-50%, 0);
+  padding: 0.6rem;
   z-index: 999;
   transition: 0.5s; }
-  #nav .nav__logo {
-    display: block; }
-  #nav .nav__menu {
-    display: flex;
-    justify-content: flex-start; }
-    #nav .nav__menu li:hover > a::after {
-      width: 100%; }
-    #nav .nav__menu li a {
-      position: relative;
+
+.main__nav {
+  position: fixed;
+  transform: translate(-50%, 0);
+  top: 0;
+  left: 50%; }
+
+.nav__logo {
+  display: block; }
+
+.nav__menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; }
+  .nav__menu li:hover > a::after {
+    width: 100%; }
+  .nav__menu li a {
+    position: relative;
+    display: block;
+    color: inherit;
+    font-size: 1.25rem;
+    padding: 1rem;
+    text-shadow: #333 1px 0 10px; }
+    .nav__menu li a::after {
       display: block;
-      color: inherit;
-      font-size: 1.25rem;
-      padding: 1rem;
-      text-shadow: #333 1px 0 10px; }
-      #nav .nav__menu li a::after {
-        display: block;
-        content: "";
-        position: absolute;
-        left: 0;
-        width: 0;
-        background-color: #ffcc00;
-        transition: 0.2s;
-        bottom: 0.313rem;
-        height: 4px; }
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 0;
+      background-color: #ffcc00;
+      transition: 0.2s;
+      bottom: 0.313rem;
+      height: 4px; }
 
 #nav.is-Down {
   transform: translate(-50%, 0); }
@@ -323,7 +347,7 @@ i {
 .nav--fixed {
   background-color: rgba(0, 0, 0, 0.5); }
 
-#header {
+.main-header {
   position: relative;
   width: 100vw;
   height: 100vh; }
@@ -458,10 +482,7 @@ i {
 
 /* 메인 섹션 컴포넌트 */
 .content-container {
-  position: relative;
-  max-width: 75rem;
-  padding: 0.625em 0 8rem 0;
-  margin: 0 auto 8em auto; }
+  position: relative; }
   .content-container .container-title {
     position: relative;
     font-family: "GeographRegular";
@@ -469,22 +490,23 @@ i {
     letter-spacing: 0.025rem;
     width: max-content;
     margin: 2.7em 0; }
-  .content-container .marker-left::before {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    display: block;
-    content: "";
-    background-color: #ffcc00;
-    left: -1rem;
-    width: 3px;
-    height: 100%;
-    z-index: 9; }
   .content-container .wrap--flex {
     display: flex;
     justify-content: flex-start; }
   .content-container:not(:nth-child(3)) {
     opacity: 0; }
+
+.marker-left::before {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  content: "";
+  background-color: #ffcc00;
+  left: -1rem;
+  width: 3px;
+  height: 100%;
+  z-index: 9; }
 
 .article__headline {
   font-family: "KoPubDotumBold";
@@ -589,8 +611,7 @@ i {
     .slide li figure {
       width: 500px;
       height: 320px;
-      overflow: hidden;
-      background: black; }
+      overflow: hidden; }
     .slide li:hover img {
       transform: scale(1.05); }
     .slide li span {
@@ -666,12 +687,15 @@ i {
     background: #ffcc00; }
     #store .post-link:hover .article__headline::after {
       width: 0; }
-    #store .post-link:hover h5, #store .post-link:hover span {
+    #store .post-link:hover h5,
+    #store .post-link:hover span {
       color: black; }
-  #store .post-link .store__article--first ~ .store__article--second {
-    margin-left: -1em; }
-  #store .post-link .store__article--second {
-    transition: 0.3s; }
+
+#store .store__article--first:hover ~ .store__article--second {
+  margin-left: -1em; }
+
+#store .store__article--second {
+  transition: 0.3s; }
 
 /* 푸터 */
 #footer {

@@ -1,0 +1,495 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+* {
+  box-sizing: border-box; }
+
+a {
+  text-decoration: none;
+  display: block;
+  color: inherit; }
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.shows__container .shows__thumbnails li figcaption .shows__category::before, .shows__container .shows__thumbnails li figcaption .shows__category::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  content: "";
+  background-color: #ffcc00;
+  width: 2px;
+  height: 100%; }
+
+.shows__container {
+  max-width: 75rem;
+  padding: 0.625em 0 8rem 0;
+  margin: 0 auto 8em auto; }
+
+body {
+  font-family: "KoPubDotumMedium", sans-serif;
+  background-color: black;
+  color: white;
+  scroll-behavior: smooth; }
+
+.page_container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; }
+
+@font-face {
+  font-family: "KoPubDotumMedium";
+  src: url("../font/KOPUBWORLD_TTF_FONTS-1/KoPubWorld Dotum Medium.ttf") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "KoPubDotumBold";
+  src: url("../font/KOPUBWORLD_TTF_FONTS-1/KoPubWorld Dotum Bold.ttf") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "GeographRegular";
+  src: url("../font/geograph-edit-cufonfonts/geographeditwebregular.ttf") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "GeographBold";
+  src: url("../font/geograph-edit-cufonfonts/geographwebbold.ttf") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "GeographThin";
+  src: url("../font/geograph-edit-cufonfonts/geographeditwebthin.ttf") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: "liga"; }
+
+/*레이아웃*/
+.row-container {
+  max-width: 75em;
+  margin: 2.813em auto;
+  display: flex; }
+
+.dropdown__wrap {
+  justify-content: flex-end; }
+
+.pagination__wrap {
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 5em; }
+
+#nav {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  width: 100vw;
+  padding: 0.6rem;
+  z-index: 999;
+  transition: 0.5s; }
+
+.main__nav {
+  position: fixed;
+  transform: translate(-50%, 0);
+  top: 0;
+  left: 50%; }
+
+.nav__logo {
+  display: block; }
+
+.nav__menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; }
+  .nav__menu li:hover > a::after {
+    width: 100%; }
+  .nav__menu li a {
+    position: relative;
+    display: block;
+    color: inherit;
+    font-size: 1.25rem;
+    padding: 1rem;
+    text-shadow: #333 1px 0 10px; }
+    .nav__menu li a::after {
+      display: block;
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 0;
+      background-color: #ffcc00;
+      transition: 0.2s;
+      bottom: 0.313rem;
+      height: 4px; }
+
+#nav.is-Down {
+  transform: translate(-50%, 0); }
+
+#nav.is-Up {
+  transform: translate(-50%, -100%); }
+
+.nav--fixed {
+  background-color: rgba(0, 0, 0, 0.5); }
+
+/* 푸터 */
+#footer {
+  background-color: #151515;
+  color: #a2a2a2;
+  padding: 3em 5em; }
+
+.footer__wrap {
+  max-width: 75rem;
+  margin: 0 auto; }
+
+.footer__menu li, .footer__address li {
+  float: left;
+  padding: 1em; }
+
+.footer__menu::after {
+  display: block;
+  content: "";
+  clear: both; }
+
+address {
+  margin: 1em 0; }
+
+.footer__address::after {
+  display: block;
+  content: "";
+  clear: both; }
+
+.footer__address li:first-child > span {
+  position: relative; }
+  .footer__address li:first-child > span::after {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    content: "";
+    background-color: #a2a2a2;
+    width: 1px;
+    height: 100%;
+    right: -1em; }
+
+.footer__address li .footer__address__part-name,
+.footer__address li .footer__address__phone-number {
+  display: block;
+  font-size: 0.8rem; }
+
+.footer__info {
+  padding: 1em;
+  margin-top: 1em;
+  font-size: 0.8rem; }
+  .footer__info::after {
+    display: block;
+    content: "";
+    clear: both; }
+  .footer__info .footer__info__copyright {
+    display: block;
+    float: left;
+    margin-right: 2em; }
+  .footer__info .footer__info__link::after {
+    display: block;
+    content: "";
+    clear: both; }
+  .footer__info .footer__info__link li {
+    float: left;
+    margin-right: 1em; }
+
+/*서브*/
+.sub__nav {
+  position: static;
+  transform: translate(0, 0);
+  margin: 0.5em 0; }
+
+.sub__nav--fixed {
+  position: fixed;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.sub__nav--is-Down {
+  transform: translate(0, 0); }
+
+.sub__nav--is-Up {
+  transform: translate(0, -100%); }
+
+.sub__header {
+  position: relative;
+  width: 100vw;
+  height: 23.438rem;
+  background: no-repeat center/cover url("../img/sub/sub_header.jpg"); }
+  .sub__header .header__title {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15%;
+    font-family: "GeographBold";
+    font-size: 3.75rem;
+    letter-spacing: 0.1rem; }
+  .sub__header .marker-left::before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    content: "";
+    background-color: #ffcc00;
+    left: -1rem;
+    width: 8px;
+    height: 100%;
+    z-index: 9; }
+
+.shows__container {
+  margin-bottom: 0; }
+  .shows__container .shows__thumbnails {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; }
+    .shows__container .shows__thumbnails li {
+      width: max-content;
+      margin-bottom: 3em; }
+      .shows__container .shows__thumbnails li figure {
+        position: relative;
+        width: 36.25rem;
+        height: 23.75rem;
+        overflow: hidden; }
+        .shows__container .shows__thumbnails li figure:hover img {
+          transform: scale(1.05); }
+        .shows__container .shows__thumbnails li figure img {
+          height: 100%;
+          -webkit-transition: 0.3s ease-in-out;
+          transition: 0.3s ease-in-out; }
+      .shows__container .shows__thumbnails li figcaption {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 10%;
+        font-family: "KoPubDotumBold"; }
+        .shows__container .shows__thumbnails li figcaption .shows__category {
+          position: relative;
+          display: block;
+          width: max-content;
+          margin-top: 2em;
+          font-size: 1em;
+          letter-spacing: 0.05em;
+          padding: 0 1em 0 1em; }
+          .shows__container .shows__thumbnails li figcaption .shows__category::before {
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0; }
+          .shows__container .shows__thumbnails li figcaption .shows__category::after {
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%); }
+        .shows__container .shows__thumbnails li figcaption .show__title {
+          display: block;
+          font-size: 1.875rem;
+          line-height: 2.5em; }
+        .shows__container .shows__thumbnails li figcaption .show__caption {
+          display: block;
+          font-family: "KoPubDotumMedium";
+          letter-spacing: 0.025rem; }
+
+.dropdown {
+  z-index: 999; }
+
+.dropdown-select {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: max-content;
+  padding: 0.5em 1.5em;
+  border: 2px solid #ffcc00;
+  text-align: center;
+  font-family: "GeographBold";
+  font-size: 0.8rem;
+  letter-spacing: 0.06rem;
+  cursor: pointer; }
+
+.dropdown-list {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 110%;
+  background: #151515;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; }
+  .dropdown-list .dropdown-list__item {
+    padding: 1em 1.5em; }
+    .dropdown-list .dropdown-list__item:hover {
+      background: black; }
+
+.hidden {
+  display: none; }
+
+.visible {
+  display: block; }
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .pagination li a {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .pagination li:not(:first-child) {
+    margin-left: 0.5em; }
+  .pagination .material-icons-outlined {
+    font-family: "Material Icons"; }
+  .pagination .active {
+    background: #ffcc00;
+    color: black;
+    font-weight: 600; }

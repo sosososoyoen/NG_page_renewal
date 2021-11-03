@@ -1,0 +1,68 @@
+.shows__container{
+    @extend %content-container;
+    margin-bottom: 0;
+    .shows__thumbnails {
+        width: 100%;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        flex-wrap: wrap;
+        li {
+            width:max-content;
+            margin-bottom:3em;
+            
+            figure {
+                position:relative;
+                width:36.25rem;
+                height:23.75rem;
+                overflow:hidden;
+                &:hover {
+                    img {
+                        transform: scale(1.05);
+                    }
+                }
+                img {
+                    height:100%;
+                    -webkit-transition: 0.3s ease-in-out;
+                    transition: 0.3s ease-in-out;
+                }
+            }
+            figcaption {
+                position:absolute;
+                @include colCenter;
+                left:10%;
+                font-family: "KoPubDotumBold";
+                .shows__category {
+                    position: relative;
+                    display:block;
+                    width: max-content;
+                    margin-top: 2em;
+                    font-size: 1em;
+                    letter-spacing: 0.05em;
+                    padding: 0 1em 0 1em;
+        
+                    &::before {
+                        @extend %category-marker;
+                        @include colCenter;
+                        left: 0;
+                    }
+                    &::after {
+                        @extend %category-marker;
+                        right:0;
+                        @include colCenter;
+                    }
+                }
+                .show__title {
+                    display:block;
+                    font-size: 1.875rem;
+                    line-height: 2.5em;
+                } //프로그램 이름
+                .show__caption {
+                    display:block;
+                    font-family: "KoPubDotumMedium";
+                    letter-spacing: 0.025rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+.pagination {
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    li {
+        a {
+            width:3rem;
+            height:3rem;
+            font-size:1em;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        &:not(:first-child){
+            margin-left: 0.5em;
+    
+        }
+    }
+    .material-icons-outlined {
+        font-family: "Material Icons";
+    }
+    
+    .active {
+        background:$color-yellow;
+        color: $color-black;
+        font-weight: 600;
+    }
+}

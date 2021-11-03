@@ -1,0 +1,43 @@
+//드롭다운 메뉴
+.dropdown {
+    z-index:999;
+  }
+  .dropdown-select {
+    position:relative;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    width:max-content;
+    padding: 0.5em 1.5em;
+    border: 2px solid $color-yellow;
+    text-align: center;
+    font-family: "GeographBold";
+    font-size: 0.8rem;
+    letter-spacing: 0.06rem;
+    cursor:pointer;
+  }
+  .dropdown-list {
+    display:none;
+    position:absolute;
+    left:0;
+    right:0;
+    top:110%;
+    background: $color-darkgray;
+    box-shadow: rgba($color-black, 0.35) 0px 5px 15px;
+    .dropdown-list__item  {
+      padding: 1em 1.5em;
+      &:hover {
+        background:$color-black;
+      }
+      
+    }
+  }
+
+  .hidden {
+    display:none;
+
+  }
+
+  .visible {
+    display:block;
+  }

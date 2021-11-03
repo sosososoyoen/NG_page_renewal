@@ -1,25 +1,24 @@
 #store {
-    .post-link {
-        &:hover {
-            padding: 0.7em 1em;
-            margin: -0.7em -0.5em;
-            background: $color-yellow;
-          .article__headline::after {
-            width: 0;
-          }
-          h5, span {
-              color: $color-black;
-          }
-        }
-        .store__article--first ~.store__article--second {
-            margin-left: -1em;
-        }
-
-        transition: 0.3s;
-        .store__article--second {
-            transition: 0.3s;
-        }
+  .post-link {
+    &:hover {
+      padding: 0.7em 1em;
+      margin: -0.7em -0.5em;
+      background: $color-yellow;
+      .article__headline::after {
+        width: 0;
+      }
+      h5,
+      span {
+        color: $color-black;
+      }
     }
+    
+    transition: 0.3s;
+  }
+  .store__article--first:hover ~ .store__article--second {
+    margin-left: -1em;
+  }
+  .store__article--second {
+    transition: 0.3s;
+  }
 }
-
-
