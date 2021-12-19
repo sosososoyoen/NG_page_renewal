@@ -1,14 +1,18 @@
 .row-container {
-    max-width:75em;
-    margin: 2.813em auto;
-    display: flex;
+  max-width: 75em;
+  margin: 2.813em auto;
+  display: flex;
+  @include tablet {
+    width: 100%;
+    padding: 2em;
+  }
 }
 
 .dropdown__wrap {
-    justify-content:flex-end;
+  justify-content: flex-end;
 }
 .pagination__wrap {
-    justify-content: center;
-    margin: 0 auto;
-    margin-bottom: 5em;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 5em;
 }

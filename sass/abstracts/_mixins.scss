@@ -18,12 +18,6 @@
   }
 }
 
-@mixin desktop {
-  @media (max-width: #{$breakpoint-desktop}) {
-    @content;
-  }
-}
-
 @mixin rowCenter {
   left: 50%;
   transform: translateX(-50%);
