@@ -4,8 +4,19 @@ body {
   color: $color-white;
   scroll-behavior: smooth;
 }
+html {
+  @include tablet {
+    font-size: 80%;
+  }
+  @include tablet {
+    font-size: 60%;
+  }
+}
 .page_container {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  @include tablet {
+    position: relative;
+  }
 }

@@ -1,74 +1,28 @@
+
+
+
 $color-yellow: #ffcc00;
 $color-gray: #a2a2a2;
 $color-black: black;
 $color-white: white;
 $color-darkgray: #151515;
 
-@mixin rowCenter {
-  left: 50%;
-  transform: translateX(-50%);
-}
-@mixin colCenter {
-  top: 50%;
-  transform: translateY(-50%);
-}
-@mixin center {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-}
-
-//클리어픽스
-@mixin clearfix {
-  &::after {
-    display: block;
-    content: "";
-    clear: both;
-  }
-}
-//marker 기본 설정
-@mixin marker-left-Default($col) {
-  position: absolute;
-  @include colCenter;
-  display: block;
-  content: "";
-  background-color: $col;
-}
-@mixin marker-bottom-Default {
-    display: block;
-    content: "";
-    position: absolute;
-  left:0;
-  width:0;
-  background-color: $color-yellow;
-  transition: 0.2s;
-}
 %btn {
-    border: none;
-    background: transparent;
-    color: $color-white;
-    cursor: pointer;
+  border: none;
+  background: transparent;
+  color: $color-white;
+  cursor: pointer;
 }
 
-%category-marker {
-    @include marker-left-Default($color-yellow);
-    width: 2px;
-    height: 100%;
-} 
 
-@mixin marker-left($width) {
-  &::before {
-    @include marker-left-Default($color-yellow);
-    left: -1rem;
-    width: $width;
-    height: 100%;
-    z-index: 9;
-  }
-}
 
 %content-container {
   max-width: 75rem;
   padding: 0.625em 0 8rem 0;
   margin: 0 auto 8em auto;
 }
+
+//미디어쿼리
+$breakpoint-mobile: 481px;
+$breakpoint-tablet: 758px;
+$breakpoint-desktop: 1200px;

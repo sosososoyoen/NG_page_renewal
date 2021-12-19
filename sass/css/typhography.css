@@ -1,35 +1,34 @@
 @font-face {
   font-family: "KoPubDotumMedium";
-  src: url("../font/KOPUBWORLD_TTF_FONTS-1/KoPubWorld\ Dotum\ Medium.ttf")
-    format("woff");
+  src: url("../font/KOPUBWORLD_TTF_FONTS-1/KoPubWorld Dotum Medium.ttf") format("woff");
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: "KoPubDotumBold";
-  src: url("../font/KOPUBWORLD_TTF_FONTS-1/KoPubWorld\ Dotum\ Bold.ttf")
-    format("woff");
+  src: url("../font/KOPUBWORLD_TTF_FONTS-1/KoPubWorld Dotum Bold.ttf") format("woff");
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: "GeographRegular";
-  src: url("../font/geograph-edit-cufonfonts/geographeditwebregular.ttf")
-    format("woff");
+  src: url("../font/geograph-edit-cufonfonts/geographeditwebregular.ttf") format("woff");
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: "GeographBold";
-  src: url("../font/geograph-edit-cufonfonts/geographwebbold.ttf")
-    format("woff");
+  src: url("../font/geograph-edit-cufonfonts/geographwebbold.ttf") format("woff");
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: "GeographThin";
-  src: url("../font/geograph-edit-cufonfonts/geographeditwebthin.ttf")
-    format("woff");
+  src: url("../font/geograph-edit-cufonfonts/geographeditwebthin.ttf") format("woff");
   font-weight: normal;
   font-style: normal;
 }

@@ -3,6 +3,10 @@
   position: relative;
   @extend %content-container;
 
+  @include mobile {
+    width: 100%;
+  }
+
   .container-title {
     position: relative;
     font-family: "GeographRegular";
@@ -10,20 +14,28 @@
     letter-spacing: 0.025rem;
     width: max-content;
     margin: 2.7em 0;
+    @include mobile {
+      margin-left: 2.5rem;
+    }
   }
-  
+
   .wrap--flex {
     display: flex;
     justify-content: flex-start;
+    @include mobile {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
-  
+
   &:not(:nth-child(3)) {
     opacity: 0;
   }
 }
 //마커 레프트
 .marker-left {
-  @include marker-left(3px)
+  @include marker-left(3px);
 }
 // 아티클 설정
 .article__headline {
@@ -39,6 +51,11 @@
 
 //포스트 제목 호버
 .post-link {
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .article__headline {
     position: relative;
     width: max-content;
@@ -58,12 +75,17 @@
   //썸네일 호버 효과
   figure {
     overflow: hidden;
-    width: max-content;
-    height: max-content;
+    @include tablet {
+      width: 90%;
+    }
+    @include mobile {
+      width: 80%;
+    }
   }
   .post__thumbnail {
     -webkit-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
+    width: 100%;
   }
   &:hover {
     .post__thumbnail {

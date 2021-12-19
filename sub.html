@@ -5,25 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="css/sub.css">
+    <link rel="stylesheet" href="css/main.css">
     <script src="js/sub-script.js" defer></script>
     <title>내셔널지오그래픽_리뉴얼_서브페이지</title>
 </head>
 <body>
     <div class="page_container">
-        <nav id="nav" class="sub__nav">
-            <a href="index.html" class="nav__logo">
-                <img src="img/logo.png" alt="">
+        <nav id="nav" class="main__nav">
+            <a href="#" class="nav__logo">
+                <img src="img/logo.png" alt="내셔널지오그래픽 로고">
             </a>
-            <ul class="nav__menu">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="#">BRAND</a></li>
-                <li><a href="#">SHOWS</a></li>
-                <li><a href="#">YOUTUBE</a></li>
-                <li><a href="#">NEWS</a></li>
-                <li><a href="#">MAGAZINE</a></li>
-                <li><a href="#">STORE</a></li>
-            </ul>
+
+                <input type="checkbox" class="nav__checkbox"id="mobile_nav--toggle">
+                <label for="mobile_nav--toggle" class="mobile_menu">
+                    MENU
+                    <span class="material-icons menu_icon">
+                        drag_handle
+                        </span>
+                        <span class="material-icons close_icon">
+                            close
+                            </span>
+                </label>
+                <div class="mobile__nav__bg">
+                    <span class="bg"></span>
+                    <span class="bg"></span>
+                    <span class="bg"></span>
+                    <span class="bg"></span>
+                    <span class="bg"></span>
+                </div>
+                <ul class="nav__menu">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">BRAND</a></li>
+                    <li><a href="sub.html">SHOWS</a></li>
+                    <li><a href="#">YOUTUBE</a></li>
+                    <li><a href="#">NEWS</a></li>
+                    <li><a href="#">MAGAZINE</a></li>
+                    <li><a href="#">STORE</a></li>
+                </ul>
     </nav>
     <header id="header" class="sub__header">
         <h2 class="header__title marker-left">SHOWS</h2>

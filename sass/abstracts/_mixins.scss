@@ -1,0 +1,79 @@
+@import "./variables";
+
+// 미디어쿼리
+@mixin mobile-sm {
+  @media screen and (max-width: #{$breakpoint-mobile - 1px}) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media screen and (max-width: #{$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: #{$breakpoint-desktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+
+@mixin rowCenter {
+  left: 50%;
+  transform: translateX(-50%);
+}
+@mixin colCenter {
+  top: 50%;
+  transform: translateY(-50%);
+}
+@mixin center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+//marker 기본 설정
+@mixin marker-left-Default($col) {
+  position: absolute;
+  @include colCenter;
+  display: block;
+  content: "";
+  background-color: $col;
+}
+@mixin marker-bottom-Default {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 0;
+  background-color: $color-yellow;
+  transition: 0.2s;
+}
+@mixin marker-left($width) {
+  &::before {
+    @include marker-left-Default($color-yellow);
+    left: -1rem;
+    width: $width;
+    height: 100%;
+    z-index: 9;
+  }
+}
+//클리어픽스
+@mixin clearfix {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+%category-marker {
+  @include marker-left-Default($color-yellow);
+  width: 2px;
+  height: 100%;
+}

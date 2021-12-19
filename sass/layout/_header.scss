@@ -12,6 +12,10 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  @include mobile-sm {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
 }
 .header__video {
   position: absolute;
@@ -27,7 +31,10 @@
   width: 50rem;
   position: relative;
   padding-left: 2em;
-
+  @include mobile {
+    width: 90%;
+    margin: 2rem;
+  }
   &::before {
     position: absolute;
     display: block;
@@ -50,6 +57,15 @@
     font-size: 1.7rem;
     letter-spacing: 0.025rem;
     line-height: 4rem;
+    @include mobile {
+      letter-spacing: 0rem;
+    }
+  }
+}
+.header__social {
+  @include mobile {
+    display: flex;
+    align-items: center;
   }
 }
 .header__social > li > a {
@@ -57,9 +73,8 @@
   margin: 2rem;
   opacity: 0.5;
   transition: 0.3s;
+
   &:hover {
     opacity: 1;
   }
 }
-
-

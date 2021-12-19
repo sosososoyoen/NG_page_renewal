@@ -1,9 +1,20 @@
 .news__article {
+  @include mobile {
+    width: 90%;
+  }
   &:not(:last-child) {
     margin-right: 1.25em;
+    @include mobile {
+      margin-right: 0;
+      margin-bottom: 3em;
+    }
   }
 }
 .magazine__article:first-child,
 .store__article:first-child {
   margin-right: 5rem;
+  @include mobile {
+    margin-right: 0;
+    margin-bottom: 3em;
+  }
 }

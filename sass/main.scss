@@ -2,11 +2,11 @@
 @import "base/reset";
 
 // 변수 불러오기
-@import "abstracts/variables.scss";
-
+@import "abstracts/variables";
+@import "abstracts/mixins";
 //베이스 설정
 @import "base/base";
-@import "base/typhography.scss";
+@import "base/typhography";
 
 /*레이아웃*/
 @import "layout/row";
@@ -41,7 +41,8 @@
 /* 푸터 */
 @import "layout/footer";
 
-
-
-
-
+// 서브
+@import "pages/sub";
+@import "layout/sub-shows";
+@import "components/pagination";
+@import "components/dropdown";

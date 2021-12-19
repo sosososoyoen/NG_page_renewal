@@ -1,4 +1,3 @@
-
 //스크롤 버튼
 .btn-scroll {
   @extend %btn;
@@ -60,15 +59,18 @@
 }
 .btn-more__icon {
   color: $color-white;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   margin-bottom: -5px;
   transition: 0.2s;
+  @include tablet {
+    font-size: 16px;
+  }
 }
 .btn-more__text {
   position: relative;
 
   &::after {
-    @include marker-bottom-Default
+    @include marker-bottom-Default;
     @include rowCenter;
     width: 100%;
     height: 2px;
@@ -79,5 +81,3 @@
     color: $color-black;
   }
 }
-
-

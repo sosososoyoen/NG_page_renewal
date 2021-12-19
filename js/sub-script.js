@@ -11,20 +11,16 @@ dropdown.addEventListener("click",function(){
 
 window.addEventListener("scroll",()=>{
         // 내비게이션 스크롤 이벤트
-    navBar.classList.toggle("sub__nav--fixed",window.scrollY>navBar.clientHeight);
+    // 내비게이션 스크롤 이벤트
+    navBar.classList.toggle("nav--fixed",window.scrollY>document.querySelector(".header__overlay").clientHeight/2.5);
     var scrollTop = window.scrollY;
     if (scrollTop > lastScrollTop) {
-        navBar.classList.add("sub__nav--is-Up");
+        navBar.classList.add("is-Up");
     }else {
-        navBar.classList.remove("sub__nav--is-Up");
-        navBar.classList.add("sub__nav--is-Down");
+        navBar.classList.remove("is-Up");
+        navBar.classList.add("is-Down");
     }
     lastScrollTop = scrollTop;
-    if(window.scrollY>navBar.clientHeight){
-        header.style.marginTop="1em";
-    } else {
-        header.removeAttribute("style");
-    }
 })
 
 //페이지 넘버 active

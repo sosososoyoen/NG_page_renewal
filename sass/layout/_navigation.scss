@@ -1,11 +1,15 @@
 #nav {
   display: flex;
-  justify-content: center;
   justify-content: space-around;
   width: 100vw;
   padding: 0.6rem;
   z-index: 999;
   transition: 0.5s;
+  @include tablet {
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-black;
+  }
 }
 .main__nav {
   position: fixed;
@@ -15,13 +19,29 @@
 }
 .nav__logo {
   display: block;
+  img {
+    width: 100%;
+    @include mobile {
+      width: 60%;
+    }
+  }
 }
 
 .nav__menu {
   display: flex;
   justify-content: flex-start;
-  align-items:center;
-
+  align-items: center;
+  @include tablet {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: 9;
+  }
   li {
     &:hover > a::after {
       width: 100%;
@@ -33,6 +53,14 @@
       font-size: 1.25rem;
       padding: 1rem;
       text-shadow: #333 1px 0 10px;
+      @include tablet {
+        font-size: 2rem;
+        letter-spacing: 0.2rem;
+        padding: 2rem;
+        opacity: 0;
+        transition: 0.3s;
+        transition-delay: 0.8s;
+      }
 
       &::after {
         @include marker-bottom-Default;
@@ -50,4 +78,70 @@
 }
 .nav--fixed {
   background-color: rgba($color-black, 0.5);
+}
+
+.mobile_menu {
+  margin-right: 2rem;
+  font-size: 120%;
+  display: none;
+  @extend %btn;
+  @include tablet {
+    display: block;
+  }
+}
+.mobile__nav__bg {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 8;
+  visibility: hidden;
+  .bg {
+    display: block;
+    width: 0;
+    height: 20%;
+    background-color: black;
+    opacity: 0;
+    transition: 0.3s;
+    &:nth-child(2) {
+      transition-duration: 0.5s;
+    }
+    &:nth-child(3) {
+      transition-duration: 1s;
+    }
+    &:nth-child(4) {
+      transition-duration: 1.5s;
+    }
+    &:nth-child(5) {
+      transition-duration: 2s;
+    }
+  }
+}
+.nav__checkbox {
+  display: none;
+}
+span.close_icon {
+  display: none;
+}
+.nav__checkbox:checked ~ .nav__menu {
+  visibility: visible;
+  width: 100vw;
+  height: 100vh;
+  & > li > a {
+    opacity: 1;
+  }
+}
+.nav__checkbox:checked ~ .mobile__nav__bg > .bg {
+  width: 100%;
+  visibility: visible;
+  opacity: 1;
+}
+.nav__checkbox:checked ~ .mobile_menu {
+  span.menu_icon {
+    display: none;
+  }
+  span.close_icon {
+    display: inline-block;
+  }
 }
