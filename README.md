@@ -1,5 +1,6 @@
 # NATIONAL GEOGRAPHIC Renewal
 <내셔널지오그래픽> 홈페이지 리뉴얼
+https://soonmac.github.io/NG_page_renewal/
 
 ## 프로젝트 목표
 
